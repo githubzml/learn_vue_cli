@@ -137,4 +137,187 @@ nanoid 简单版
 ## p76
 
 全选/全不选/清除已选
- 
+
+# 2021-12-30
+
+## p77
+
+总结 todolist
+
+## p78
+
+WebStroage
+
+localStorage/sessionStorage
+存 读 删 清
+
+## p79
+
+todolist WebStroage版本
+
+## p80
+
+内置事件拿过来直接用
+click
+keyup
+...
+
+状态提升 实现子给父传递事件
+自定义事件 实现子给父传递事件
+this.$emit()
+
+1. 3秒中后 触发 this.$refs.student.$on("thing",(回调函数))
+2. 只触发一次 .once (一次性)
+
+传递过来一个对象 用 ... 解析 
+
+## p81
+
+解绑事件
+
+this.$off(["", ""]) 解绑多个
+
+## p82
+
+自定义事件总结
+
+## p83
+
+自定义事件todolist
+
+## p84
+
+ $Bus
+全局事件总线1
+
+## p85
+
+全局事件总线2
+
+## p86
+
+全局事件总线todolist
+
+## p87
+
+发布订阅 npm i pubsub
+
+## p88
+
+发布订阅todolist
+
+## p89
+
+编辑 按钮
+
+## p90
+
+模板解析 效率问题
+
+回调函数
+
+DOM更新完毕后再调用
+
+this.$nextTick()
+
+## p91
+
+动画效果
+
+## p92
+
+过渡效果
+
+## p93
+
+多个元素过渡
+
+## p94 
+
+animate.css
+https://animate.style/
+
+## p95
+
+总结过渡与动画
+
+# 2021-12-31
+
+## p96
+
+配置请求信息
+
+减少自己操作DOM
+
+xhr 内置的
+axios 封装的
+fetch 内置的 1. 两层返回 2. 兼容性问题IE上不能用
+
+response响应对象 response.data 才是数据
+
+1. cors 加特殊的响应头
+2. jsonp get
+3. 代理 1.nginx 开启代理服务器
+       2.vue-cli
+
+1. 不能灵活配置多个代理
+2. 不能控制它是请求 根目录下的 还是服务器下的
+以上是缺点
+devServer: {
+
+    proxy: 'http://localhost:3000'
+
+  }
+不是说是垃圾 而是不完美 
+
+## p97
+
+ 方式2 
+  1. 可以请求本地 可以请求服务器 不冲突
+  2. 可以设置多个代理
+  devServer: {
+
+    proxy: {
+      // /api 请求前缀
+      '/hahah': {
+        target: 'http://localhost:3000',
+        pathRewrite: { "^/hahah": "" },
+        ws: true, //用于支持webscoket
+        changeOrigin: true //用于控制请求中的host值
+      },
+    }
+
+  }
+
+## p98
+
+组件拆分
+
+search
+list
+
+public 直接引入不会经过编译 放入第三方资源
+assets 会经过编译
+
+## p99
+
+github 的免费在线接口
+
+https://api.github.com/search/users?q=
+
+https://api.github.com/search/users?q=tom+repos:%3E42+followers:%3E1000
+
+## p100
+
+github案例完善
+
+## p101
+
+vue 1.0 vue-resource
+
+## p102
+
+默认插槽
+Category 分类
+
+

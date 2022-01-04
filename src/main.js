@@ -9,4 +9,7 @@ Vue.use(plugin);
 
 new Vue({
   render: h => h(App),
+  beforeCreate() {
+    Vue.prototype.$Bus = this;
+  }
 }).$mount('#app')

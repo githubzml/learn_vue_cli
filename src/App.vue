@@ -11,14 +11,48 @@
     <Tea></Tea>
     <Water></Water> -->
 
-    <aHeader :addTodo="addTodo" />
-    <aList :arr="arr" :cancelCheck="cancelCheck" :removeItem="removeItem" />
-    <aFooter
-      v-show="arr.length"
-      :arr="arr"
-      :checkAllTodo="checkAllTodo"
-      :clearAll="clearAll"
-    />
+    <div class="wrap_left">
+      <aHeader :addTodo="addTodo" />
+      <aList :arr="arr" :cancelCheck="cancelCheck" :removeItem="removeItem" />
+      <aFooter
+        v-show="arr.length"
+        :arr="arr"
+        :checkAllTodo="checkAllTodo"
+        :clearAll="clearAll"
+      />
+
+      <div class="_bus">
+        <bLeft />
+        <bRight />
+      </div>
+
+      <div class="_pubsub">
+        <cLeft />
+        <cRight />
+      </div>
+
+      <div>
+        <dAnimation />
+      </div>
+
+      <div>
+        <eAxios />
+      </div>
+    </div>
+
+    <div class="wrap_right">
+      <fCategory>
+        <img src="../public/lydj.png" alt="" />
+      </fCategory>
+      <fCategory>
+        <ul>
+          <li v-for="item in list">{{ item }}</li>
+        </ul>
+      </fCategory>
+      <fCategory>
+        这是一段文字呢
+      </fCategory>
+    </div>
   </div>
 </template>
 
@@ -30,6 +64,19 @@ import { a } from "./mixins";
 import aHeader from "./components/aHeader";
 import aList from "./components/aList";
 import aFooter from "./components/aFooter";
+
+import bLeft from "./components/bLeft.vue";
+import bRight from "./components/bRight.vue";
+
+import cLeft from "./components/cLeft.vue";
+import cRight from "./components/cRight.vue";
+
+import dAnimation from "./components/dAnimation";
+
+import eAxios from "./components/eAxios.vue";
+
+import fCategory from "./components/fCategory.vue";
+
 export default {
   name: "App",
   mixins: [a],
@@ -39,6 +86,18 @@ export default {
     aHeader,
     aList,
     aFooter,
+
+    bLeft,
+    bRight,
+
+    cLeft,
+    cRight,
+
+    dAnimation,
+
+    eAxios,
+
+    fCategory,
   },
   data() {
     return {
@@ -49,6 +108,7 @@ export default {
         { id: "002", txt: "睡觉", done: false },
         { id: "003", txt: "学习", done: true },
       ],
+      list: ["佩奇", "配吧", "配酒"],
     };
   },
   mounted() {
@@ -90,11 +150,25 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="less">
 #app {
-  width: 600px;
+  display: flex;
   padding: 0 20px;
-  /* height: 300px; */
   border: 1px solid #ccc;
+  .wrap_left {
+    width: 600px;
+    ._bus,
+    ._pubsub {
+      display: flex;
+      width: 600px;
+      height: 300px;
+      border: 1px solid wheat;
+    }
+  }
+  .wrap_right {
+    display: flex;
+    margin-left: 20px;
+    border-left: 1px solid #ccc;
+  }
 }
 </style>
