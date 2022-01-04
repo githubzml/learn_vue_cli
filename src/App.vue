@@ -41,17 +41,40 @@
     </div>
 
     <div class="wrap_right">
-      <fCategory>
-        <img src="../public/lydj.png" alt="" />
-      </fCategory>
-      <fCategory>
-        <ul>
-          <li v-for="item in list">{{ item }}</li>
-        </ul>
-      </fCategory>
-      <fCategory>
-        这是一段文字呢
-      </fCategory>
+      <div class="_mr">
+        <fCategory>
+          <img src="../public/lydj.png" alt="" />
+        </fCategory>
+        <fCategory>
+          <ul>
+            <li v-for="item in list">{{ item }}</li>
+          </ul>
+        </fCategory>
+        <fCategory> 这是一段文字呢 </fCategory>
+      </div>
+      <h3>具名插槽</h3>
+      <div class="jm">
+        <gJm>
+          <h2 slot="head">123</h2>
+          <h2 slot="center">234</h2>
+        </gJm>
+
+        <gJm>
+          <h3 slot="head">555</h3>
+          <h3 slot="center">666</h3>
+        </gJm>
+      </div>
+
+      <h3>作用域插槽</h3>
+      <div class="_zyy">
+        <hZyy>
+          <template slot-scope="{ game }">
+            <ul>
+              <li v-for="itme in game">{{ itme }}</li>
+            </ul>
+          </template>
+        </hZyy>
+      </div>
     </div>
   </div>
 </template>
@@ -77,6 +100,10 @@ import eAxios from "./components/eAxios.vue";
 
 import fCategory from "./components/fCategory.vue";
 
+import gJm from "./components/gJm.vue";
+
+import hZyy from "./components/hZyy.vue";
+
 export default {
   name: "App",
   mixins: [a],
@@ -98,6 +125,10 @@ export default {
     eAxios,
 
     fCategory,
+
+    gJm,
+
+    hZyy,
   },
   data() {
     return {
@@ -166,9 +197,11 @@ export default {
     }
   }
   .wrap_right {
-    display: flex;
     margin-left: 20px;
     border-left: 1px solid #ccc;
+    ._mr {
+      display: flex;
+    }
   }
 }
 </style>
