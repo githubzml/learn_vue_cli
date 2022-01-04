@@ -329,3 +329,117 @@ Category 分类
 ## p104
 
 作用域插槽
+
+# 2022-1-4
+
+## p105
+
+集中式数据管理 Vuex 数据共享
+
+## p106
+
+求和案例
+转化为数字类型
+select  :value
+v-model.number
+
+## p107
+
+mutation 修改 加工state
+state 状态
+action 动作 对应的值 未知的值 发起ajax请求
+
+dispatch (名称， 值)
+
+## p108
+
+搭建Vuex开发环境
+
+## p109
+
+求和案例 Vuex 版
+
+## p110
+
+Vuex 工具使用 以及一些问题的解释
+
+1. 多个actions 是为了处理一系列连环的复杂逻辑
+
+2. 直接写在 actions 开发者工具失效了 哈哈
+
+3. 当业务复杂时 写在actions 而不是 页面组件中 发票报销 验证真假 验证地方 ... 业务逻辑复杂
+
+优化 没有网络请求 可以越过dispatch 直接commit
+
+## p111
+
+getters 不是必须出现的  类似于 页面里面的computed
+
+## p112 
+
+mapState
+
+## p113
+
+事件传参 括弧默认传递的是事件
+
+mapMutations mapActions
+
+## p114 
+
+多组件共享
+
+## p115
+
+Vuex 模块化1
+
+操作同一个文件 容易造成版本冲突
+
+操作进行分类
+const personAbout = {
+  state:{}, 
+  mutations:{}, 
+  actions:{}, 
+  getters:{}
+}
+再写一个modules对象
+modules:{
+  AAA:personAbout
+}
+再写一个命名空间
+const personAbout = {
+  namespace:true, 
+  state:{
+
+    a:"",
+    b:""
+
+  }, 
+  mutations:{}, 
+  actions:{}, 
+  getters:{}
+}
+页面上进行引用
+...mapState("AAA", ["a", "b"])
+
+## p116
+
+Vuex 模块化2
+
+页面上进行引用
+分类名/方法名
+this.$store.commit("AAA/ADD_LIST", value)
+
+getters 
+this.$store.getters["AAA/xxx"]
+
+模块化编码 + 命名空间
+
+一言API  彩虹屁API
+https://api.uixsj.cn/
+
+https://api.uixsj.cn/hitokoto/get
+
+带有网络请求
+
+更好维护 多种数据分类明确
