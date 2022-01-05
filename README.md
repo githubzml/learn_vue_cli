@@ -443,3 +443,171 @@ https://api.uixsj.cn/hitokoto/get
 带有网络请求
 
 更好维护 多种数据分类明确
+2022-1-5
+
+## p117 路由的简介
+
+route 路由
+router 路由器
+
+单页面应用 用户体验更好 
+不必调来跳去 
+只是维护路径
+局部更新内容
+
+## p118 路由的基本使用
+
+路径的变化
+
+当前链接不刷新 只是局部更新
+前端路由 路径发生改变 对应组件就会显示
+
+路由的两种模式
+
+页签闪烁
+刷新键刷新
+
+router-link 转成a标签
+
+## p119 路由的注意点
+
+路由导航
+路由视图
+
+pages 路由组件
+components 组件
+
+$route 不是一个
+
+$router 是一个
+
+## p120 嵌套路由
+
+1. 注意 二级路由 自动添加 / 不用写
+2. 跳转 带完整路径
+
+## p121
+
+路由传递参数 query写法
+
+## p122
+
+命名路由  简化跳转
+
+## p123 
+
+路由传递参数 params写法
+params 路由必须是命名方式的 不能是path
+
+## p124
+
+路由的props 3种方式
+
+## p125 
+
+router-link 的replace模式
+
+push 堆栈的方式 改变指针指向 可以回退
+
+replace 替换掉 当前
+
+使用
+<router-link replace>
+
+## p126 编程时路由导航
+
+push
+replace
+
+this.$router.back(); 
+this.$router.forword(); 
+this.$router.go(); 
+
+## p127 
+
+缓存路由组件
+include  组件名 
+
+<keep-alive include ></keep-alive>
+
+## p128
+
+生命周期钩子
+activted
+deactivted
+
+权限
+
+## p129
+
+路由守卫 就是路由对权限的控制
+
+全局前置路由守卫
+
+是否需要权限的校验
+
+meta 提供容器 可以配置权限
+
+键权
+
+router.beforeEach((to, from, next)) 权限设置
+
+router.afterEach((to, from)) 独有的信息  document.title
+
+package.json 的 name
+
+后置路由守卫
+
+## p130
+
+全局后置路由守卫
+router.afterEach((to, from)) 特有的信息  document.title
+
+## p131
+
+某个路由独享的
+独享路由守卫 
+
+## p132
+
+通过路由规则
+组件内的路由守卫
+beforeRouteEnter
+beforeRouteLeave
+
+hash
+
+#/... hash值 不会作为路径的一部分发送请求给服务器
+
+history
+
+默认 hash
+
+mode:"history"  上线有问题 要后端哪些是前端路由 哪些是后端路由 404
+
+connect-history-api-fallback
+
+1. 好看
+
+2. # / 兼容性问题 history兼容性略差 好看
+
+3. 放在服务器
+
+生成最纯粹的 html css js
+
+打包的速度取决于
+项目大小
+硬盘的读写速度
+
+hash模式
+history模式
+地址干净美观
+应用部署服务器需要后端人员支持，解决页面刷新服务器404问题
+
+webpack
+
+部署放在服务器上
+
+static
+
+public
