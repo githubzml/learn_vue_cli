@@ -1,18 +1,18 @@
 <template>
   <div>
     <Count></Count>
-    <br />
-    <hr />
-    <Person></Person>
+    <br>
+    <hr>
+    <PersonList></PersonList>
   </div>
 </template>
 
 <script>
 import Count from "./components/Count.vue";
-import Person from "./components/Person.vue";
+import PersonList from "./components/PersonList";
 export default {
   name: "App",
-  components: { Count, Person },
+  components: { Count, PersonList },
   data() {
     return {};
   },
