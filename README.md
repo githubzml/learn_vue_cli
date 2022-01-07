@@ -443,7 +443,8 @@ https://api.uixsj.cn/hitokoto/get
 带有网络请求
 
 更好维护 多种数据分类明确
-2022-1-5
+
+# 2022-1-5
 
 ## p117 路由的简介
 
@@ -583,6 +584,8 @@ history
 
 默认 hash
 
+## p133
+
 mode:"history"  上线有问题 要后端哪些是前端路由 哪些是后端路由 404
 
 connect-history-api-fallback
@@ -604,6 +607,8 @@ history模式
 地址干净美观
 应用部署服务器需要后端人员支持，解决页面刷新服务器404问题
 
+hash # 号可能不合法
+
 webpack
 
 部署放在服务器上
@@ -611,3 +616,33 @@ webpack
 static
 
 public
+
+vue项目 部署的到 nodeJS服务器
+
+Vue-Router mode hash || history 两种方式
+
+nodeJs中间件 处理 history模式
+
+# 2022-1-6
+
+## p134
+
+Vue UI 组件库
+
+高度定制的UI
+不要求高度的定制化
+
+elementUI
+
+# 2022-1-7
+
+## p135
+
+elementUI 按需引入
+
+@babel/preset-env
+
+## p136
+vue3 简介
+
+尚硅谷 vue2 实战
